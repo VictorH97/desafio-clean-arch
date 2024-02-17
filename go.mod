@@ -1,4 +1,4 @@
-module github.com/devfullcycle/20-CleanArch
+module github.com/VictorH97/devfullcycle/goexpert/CleanArch
 
 go 1.19
 

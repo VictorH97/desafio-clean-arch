@@ -9,19 +9,19 @@ import (
 	"github.com/streadway/amqp"
 )
 
-type OrderCreatedHandler struct {
+type OrdersListedHandler struct {
 	RabbitMQChannel *amqp.Channel
 }
 
-func NewOrderCreatedHandler(rabbitMQChannel *amqp.Channel) *OrderCreatedHandler {
-	return &OrderCreatedHandler{
+func NewOrdersListedHandler(rabbitMQChannel *amqp.Channel) *OrdersListedHandler {
+	return &OrdersListedHandler{
 		RabbitMQChannel: rabbitMQChannel,
 	}
 }
 
-func (h *OrderCreatedHandler) Handle(event events.EventInterface, wg *sync.WaitGroup) {
+func (h *OrdersListedHandler) Handle(event events.EventInterface, wg *sync.WaitGroup) {
 	defer wg.Done()
-	fmt.Printf("Order created: %v", event.GetPayload())
+	fmt.Printf("Orders listed: %v", event.GetPayload())
 	jsonOutput, _ := json.Marshal(event.GetPayload())
 
 	msgRabbitmq := amqp.Publishing{
