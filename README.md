@@ -1,8 +1,9 @@
 Passos a serem executados:
 
 1. Subir containers por meio do **_docker-compose up -d_** na pasta cmd/ordersystem
-2. Executar servidores por meio do comando **_go run main.go wire_gen.go_** na pasta cmd/ordersystem  
-3. Executar chamadas no arquivo **_api/api.http_**
+2. Executar a migração pelo comando **_make migrate_up_**
+3. Executar servidores por meio do comando **_go run main.go wire_gen.go_** na pasta cmd/ordersystem  
+4. Executar chamadas no arquivo **_api/api.http_**
 
 Portas dos serviços:
 
